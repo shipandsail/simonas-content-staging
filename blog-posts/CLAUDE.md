@@ -29,7 +29,7 @@ SEO blog post system for three products. All posts are static HTML files hosted 
 ## File Structure
 ```
 /Users/shailebhyanand/Documents/business/
-├── index.html                          ← Surge hub page (NOT in blog-posts/)
+├── index.html                          ← GitHub Pages hub (NOT in blog-posts/)
 └── blog-posts/
     ├── AUTOMATION_GUIDE.md             ← Master content rules
     ├── VERIFIED_SITES_INFO.md          ← Verified pricing database
@@ -106,13 +106,4 @@ SEO blog post system for three products. All posts are static HTML files hosted 
 6. Deploy from `/Users/shailebhyanand/Documents/business/`
 
 ## Common Competitors Already Covered (UGCDrop)
-- Arcads, GridBank, MakeUGC, ReelFarm, DansUGC, Shhots AI, Creatify (via arcads-vs-creatify)
-
-## Surge Troubleshooting
-If surge throws any error (404 not found OR stream/processing error):
-```
-cd /Users/shailebhyanand/Documents/business
-npx surge teardown simon-content-staging-2026.surge.sh
-npx surge . simon-content-staging-2026.surge.sh
-```
-Teardown + redeploy fixes both error types reliably.
+- Arcads, GridBank, MakeUGC, ReelFarm, DansUGC, Shhots AI, Creatify (via arcads-vs-creatify), Fastlane, Trend.io, Insense, Minisocial
