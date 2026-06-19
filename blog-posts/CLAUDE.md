@@ -1,16 +1,18 @@
 # Blog Posts — Claude Code Guide
 
 ## Project Overview
-SEO blog post system for three products. All posts are static HTML files deployed to a Surge staging site.
+SEO blog post system for three products. All posts are static HTML files hosted on GitHub Pages.
 
 ## Critical: Deploy Setup
-- Surge deploys from **`/Users/shailebhyanand/Documents/business/`** — NOT from inside `blog-posts/`
+- Git repo root is **`/Users/shailebhyanand/Documents/business/`** — NOT inside `blog-posts/`
 - The `index.html` hub lives at `/Users/shailebhyanand/Documents/business/index.html`
 - Links in index.html use `blog-posts/` prefix (e.g. `blog-posts/ugcdrop/review.html`)
+- GitHub repo: https://github.com/shipandsail/simonas-content-staging
+- Live URL: https://shipandsail.github.io/simonas-content-staging/
 - Deploy command (run from business/):
   ```
   cd /Users/shailebhyanand/Documents/business
-  npx surge . simon-content-staging-2026.surge.sh
+  git add -A && git commit -m "message" && git push
   ```
 - After adding any new post, add it to `/Users/shailebhyanand/Documents/business/index.html`
 
