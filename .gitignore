@@ -1,0 +1,14 @@
+# Exclude everything by default
+*
+!.gitignore
+!index.html
+!blog-posts/
+!blog-posts/**
+
+# Safety nets
+.env
+.env.*
+*.key
+*.pem
+node_modules/
+.DS_Store
