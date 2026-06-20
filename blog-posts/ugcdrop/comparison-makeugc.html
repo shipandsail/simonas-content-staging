@@ -39,7 +39,7 @@ ol.blog-list li::before{counter-increment:li;content:counter(li);position:absolu
 .stat-context{font-size:.97rem;color:#333;font-weight:500;line-height:1.55}
 .stat-source{font-size:.72rem;color:#999;margin-top:5px}
 .blog-image{margin:40px 0}
-.blog-image img{width:100%;border-radius:12px;display:block;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.blog-image img{width:100%;max-height:480px;object-fit:cover;object-position:top;border-radius:12px;display:block;box-shadow:0 2px 12px rgba(0,0,0,.08)}
 .blog-image figcaption{font-size:.76rem;color:#999;margin-top:8px;text-align:center}
 .table-wrap{overflow-x:auto;margin:32px 0;border-radius:12px;border:1.5px solid #e5e5e0;box-shadow:0 1px 4px rgba(0,0,0,.04)}
 .table-caption{font-size:.78rem;color:#888;margin-bottom:10px;font-weight:500}
@@ -133,6 +133,11 @@ tr:hover td{background:#fafaf8}
 </div>
 <h3>Why do high-volume advertisers prefer UGCDrop?</h3>
 <p>Media buyers testing 10 to 20 variations of an ad daily cannot scale on metered video subscriptions. UGCDrop allows you to download raw clips, hooks, and reactions, then combine them in your timeline. This flexibility makes testing hooks much cheaper than generating full synthetic exports.</p>
+
+<figure class="blog-image">
+<img src="../images/makeugc-ui.webp" alt="MakeUGC AI UGC video ads platform"/>
+<figcaption>MakeUGC — write a script, choose an AI avatar, generate a UGC-style video ad.</figcaption>
+</figure>
 <h2>Specification Comparison Matrix</h2>
 <div class="table-wrap">
 <table>
@@ -194,6 +199,11 @@ tr:hover td{background:#fafaf8}
 </div>
 </div>
 <div class="faq">
+
+<figure class="blog-image">
+<img src="../images/ugcdrop-dashboard.png" alt="UGCDrop video library dashboard"/>
+<figcaption>UGCDrop — real human creators, not AI avatars.</figcaption>
+</figure>
 <div class="faq-label">Frequently Asked Questions</div>
 <div class="faq-item">
 <div class="faq-q">Are the creators in UGCDrop AI-generated?</div>
