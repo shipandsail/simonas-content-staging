@@ -11,13 +11,15 @@ body{background:#f9f9f7;color:#1a1a1a;font-family:'Inter',sans-serif;font-size:1
 .top{background:#111;padding:28px 32px}
 .top-title{color:#fff;font-size:1.1rem;font-weight:800;letter-spacing:-.01em}
 .top-sub{color:rgba(255,255,255,.45);font-size:.78rem;margin-top:4px}
-.top-deploy{color:rgba(255,255,255,.35);font-size:.72rem;margin-top:8px;font-family:monospace}
-.top-deploy span{background:rgba(255,255,255,.08);padding:2px 8px;border-radius:4px;color:rgba(255,255,255,.6)}
-.layout{max-width:900px;margin:0 auto;padding:48px 24px 100px}
-.section{margin-bottom:52px}
-.section-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.section-emoji{font-size:1.2rem}
-.section-title{font-size:1.05rem;font-weight:800;color:#111}
+.tabs{max-width:900px;margin:0 auto;padding:0 24px;display:flex;gap:6px;margin-top:20px}
+.tab-btn{background:#fff;border:1.5px solid #e5e5e0;border-radius:8px;padding:9px 16px;font-family:inherit;font-size:.82rem;font-weight:700;color:#777;cursor:pointer;display:flex;align-items:center;gap:8px;transition:border-color .15s,color .15s}
+.tab-btn:hover{color:#111;border-color:#ccc}
+.tab-btn.active{background:#111;border-color:#111;color:#fff}
+.tab-btn .count-chip{background:#f0f0ec;color:#777}
+.tab-btn.active .count-chip{background:rgba(255,255,255,.15);color:#fff}
+.layout{max-width:900px;margin:0 auto;padding:28px 24px 100px}
+.section{display:none}
+.section.active{display:block}
 .section-desc{font-size:.82rem;color:#888;margin-bottom:16px;padding-left:2px}
 .post-list{display:flex;flex-direction:column;gap:8px}
 .post-item{background:#fff;border:1.5px solid #e5e5e0;border-radius:10px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;text-decoration:none;transition:border-color .15s,box-shadow .15s;box-shadow:0 1px 3px rgba(0,0,0,.03)}
@@ -29,277 +31,369 @@ body{background:#f9f9f7;color:#1a1a1a;font-family:'Inter',sans-serif;font-size:1
 .badge.review{background:#edf7ed;color:#2d7a2d}
 .badge.resource{background:#f0ecff;color:#6b3fc4}
 .post-title{font-size:.875rem;font-weight:600;color:#111;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.post-arrow{color:#ccc;font-size:.85rem;flex-shrink:0}
+.post-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.post-date{font-size:.7rem;color:#aaa;font-weight:600;white-space:nowrap}
+.post-arrow{color:#ccc;font-size:.85rem}
 .post-item:hover .post-arrow{color:#111}
-.section-divider{border:none;border-top:1.5px solid #ebebea;margin:0 0 52px}
 .count-chip{background:#f0f0ec;color:#777;font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:20px}
-@media(max-width:600px){.post-title{white-space:normal}.top{padding:20px}}
+.done-checkbox{width:17px;height:17px;flex-shrink:0;cursor:pointer;accent-color:#2d7a2d}
+.post-item.done{opacity:.5}
+.post-item.done .post-title{text-decoration:line-through}
+@media(max-width:600px){.post-title{white-space:normal}.top{padding:20px}.tabs{overflow-x:auto}.post-date{display:none}}
 </style>
 </head>
 <body>
 <div class="top">
 <div class="top-title">Simonas Content Staging Hub</div>
-<div class="top-sub">Preview dashboard — all search-optimized blog pages, comparisons, and product reviews</div>
-<div class="top-deploy">Deploy: <span>npx surge . simon-content-staging-2026.surge.sh</span> from /business/</div>
+<div class="top-sub">Preview dashboard, all search-optimized blog pages, comparisons, and product reviews</div>
+</div>
+<div class="tabs">
+<button class="tab-btn active" data-tab="ugcdrop">🎥 UGCDrop <span class="count-chip">36</span></button>
+<button class="tab-btn" data-tab="vidcloner">🎙️ VidCloner <span class="count-chip">15</span></button>
+<button class="tab-btn" data-tab="tikomate">🔥 Tikomate <span class="count-chip">15</span></button>
 </div>
 <div class="layout">
 
 <!-- UGCDrop -->
-<div class="section">
-<div class="section-header">
-<span class="section-emoji">🎥</span>
-<span class="section-title">UGCDrop</span>
-<span class="count-chip">24</span>
-</div>
-<div class="section-desc">Curated database of pre-filmed video assets from real human creators to bypass shipping backlogs</div>
+<div class="section active" id="ugcdrop">
+<div class="section-desc">Curated database of pre-filmed video assets from real human creators to bypass shipping backlogs, sorted newest first</div>
 <div class="post-list">
-<a href="blog-posts/ugc-platforms-ecommerce.html" class="post-item">
-<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">Best UGC Platforms for E-Commerce Brands (2026): Top 6 Compared</span></div>
-<span class="post-arrow">→</span>
+<a href="blog-posts/ugcdrop/arcads-reviews.html" class="post-item">
+<div class="post-left"><span class="badge review">Review</span><span class="post-title">Arcads Reviews (2026): What Real Users Say on Trustpilot & Reddit</span></div>
+<div class="post-right"><span class="post-date">Jul 8</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/gridbank-pricing.html" class="post-item">
+<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">GridBank Pricing (2026): Full Cost Breakdown</span></div>
+<div class="post-right"><span class="post-date">Jul 8</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/how-to-write-tiktok-ad-hooks.html" class="post-item">
+<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">How to Write TikTok & Instagram Ad Hooks That Stop the Scroll (2026)</span></div>
+<div class="post-right"><span class="post-date">Jul 8</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/how-to-get-ugc-ads-without-creators.html" class="post-item">
+<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">How to Get UGC Ads Without Hiring Creators (2026 Guide)</span></div>
+<div class="post-right"><span class="post-date">Jul 8</span><span class="post-arrow">→</span></div>
 </a>
 <a href="blog-posts/ugcdrop/ugc-for-dropshipping.html" class="post-item">
 <div class="post-left"><span class="badge resource">Resource</span><span class="post-title">UGC for Dropshipping (2026): How to Get Creator Videos Without Sending Products</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/ugc-ad-hooks.html" class="post-item">
-<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">Best UGC Ad Hooks for E-Commerce (2026): 50+ Examples That Convert</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/ugc-for-tiktok-ads.html" class="post-item">
-<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">UGC for TikTok Ads: Complete Strategy Guide (2026)</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/ugc-for-meta-ads.html" class="post-item">
-<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">UGC for Meta Ads (Facebook & Instagram): Complete Guide (2026)</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-trend.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Trend.io (2026): Which Is Better for E-Commerce UGC?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-insense.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Insense (2026): Instant Library vs Creator Marketplace</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-minisocial.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Minisocial (2026): $0.93/Clip vs $300/Creator</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/alternatives-trend.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Trend.io Alternatives (2026): Top 4 UGC Platforms Compared</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
 </a>
 <a href="blog-posts/ugcdrop/alternatives-insense.html" class="post-item">
 <div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Insense Alternatives (2026): 5 Tools That Cost Less and Move Faster</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/alternatives-billo.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Billo Alternatives (2026): Top 4 UGC Platforms Compared</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/alternatives-joinbrands.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best JoinBrands Alternatives (2026): Top 4 UGC Platforms Compared</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/alternatives-creatify.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Creatify Alternatives (2026): Real Human UGC vs AI Avatars Compared</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/alternatives-invideo.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best InVideo Alternatives for UGC Ads (2026): Top 4 Platforms Compared</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugc-video-software.html" class="post-item">
-<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">Best UGC Video Software for Ad Campaign Testing (2026): 6 Tools Compared</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/review.html" class="post-item">
-<div class="post-left"><span class="badge review">Review</span><span class="post-title">UGCDrop Review 2026: The Only UGCDrop Review You'll Ever Need!</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
 </a>
 <a href="blog-posts/ugcdrop/comparison-billo.html" class="post-item">
 <div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Billo (2026): Instant Library or Custom Campaign?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-arcads.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Arcads (2026): Which Is Better for E-Commerce Video Ads?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-gridbank.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">GridBank vs UGCDrop: Which Is Best for eCommerce B-Roll?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-makeugc.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs MakeUGC: Which Is Better for E-Commerce Ads?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-reelfarm.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs ReelFarm: Which Is Best for High-Converting Ads?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-arcads-vs-creatify.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Arcads AI vs Creatify AI (2026): Best AI Ad Generator Tool?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-dansugc.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs DansUGC (2026): Which Is Better for Scaling Ad Creatives?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-shhotsai.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Shhots AI (2026): Real Human Clips vs AI-Generated Ads</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/comparison-fastlane.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Fastlane (2026): Which Is Better for Human UGC Videos?</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
 </a>
 <a href="blog-posts/ugcdrop/alternatives-makeugc.html" class="post-item">
 <div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best MakeUGC Alternatives (2026): 5 Tools That Beat Stiff Avatars</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/alternatives-arcads.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Arcads Alternatives (2026): Top 5 Tools Compared</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/alternatives-gridbank.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best GridBank Alternatives (2026): Top 4 B-Roll Databases Compared</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/alternatives-dansugc.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best DansUGC Alternatives (2026): Top 4 Tools Compared</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/ugcdrop/alternatives-shhotsai.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Shhots AI Alternatives (2026): Top 4 Tools Compared</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
 </a>
 <a href="blog-posts/ugcdrop/review-arcads.html" class="post-item">
 <div class="post-left"><span class="badge review">Review</span><span class="post-title">Arcads Review (2026): Honest Look at Pricing, Quality, and Who It's Actually For</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/alternatives-billo.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Billo Alternatives (2026): Top 4 UGC Platforms Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/alternatives-joinbrands.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best JoinBrands Alternatives (2026): Top 4 UGC Platforms Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/alternatives-creatify.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Creatify Alternatives (2026): Real Human UGC vs AI Avatars Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/alternatives-invideo.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best InVideo Alternatives for UGC Ads (2026): Top 4 Platforms Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugc-platforms-ecommerce.html" class="post-item">
+<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">Best UGC Platforms for E-Commerce Brands (2026): Top 6 Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/ugc-ad-hooks.html" class="post-item">
+<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">Best UGC Ad Hooks for E-Commerce (2026): 50+ Examples That Convert</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/ugc-for-tiktok-ads.html" class="post-item">
+<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">UGC for TikTok Ads: Complete Strategy Guide (2026)</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/ugc-for-meta-ads.html" class="post-item">
+<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">UGC for Meta Ads (Facebook & Instagram): Complete Guide (2026)</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-trend.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Trend.io (2026): Which Is Better for E-Commerce UGC?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-insense.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Insense (2026): Instant Library vs Creator Marketplace</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-minisocial.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Minisocial (2026): $0.93/Clip vs $300/Creator</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/alternatives-trend.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Trend.io Alternatives (2026): Top 4 UGC Platforms Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugc-video-software.html" class="post-item">
+<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">Best UGC Video Software for Ad Campaign Testing (2026): 6 Tools Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/review.html" class="post-item">
+<div class="post-left"><span class="badge review">Review</span><span class="post-title">UGCDrop Review 2026: The Only UGCDrop Review You'll Ever Need!</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-arcads.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Arcads (2026): Which Is Better for E-Commerce Video Ads?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-gridbank.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">GridBank vs UGCDrop: Which Is Best for eCommerce B-Roll?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-makeugc.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs MakeUGC: Which Is Better for E-Commerce Ads?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-reelfarm.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs ReelFarm: Which Is Best for High-Converting Ads?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-arcads-vs-creatify.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Arcads AI vs Creatify AI (2026): Best AI Ad Generator Tool?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-dansugc.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs DansUGC (2026): Which Is Better for Scaling Ad Creatives?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-shhotsai.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Shhots AI (2026): Real Human Clips vs AI-Generated Ads</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/comparison-fastlane.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">UGCDrop vs Fastlane (2026): Which Is Better for Human UGC Videos?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/alternatives-arcads.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Arcads Alternatives (2026): Top 5 Tools Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/alternatives-gridbank.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best GridBank Alternatives (2026): Top 4 B-Roll Databases Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/alternatives-dansugc.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best DansUGC Alternatives (2026): Top 4 Tools Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/ugcdrop/alternatives-shhotsai.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Shhots AI Alternatives (2026): Top 4 Tools Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
 </a>
 <a href="blog-posts/ugcdrop/review-gridbank.html" class="post-item">
 <div class="post-left"><span class="badge review">Review</span><span class="post-title">GridBank Review 2026: Is the UGC Library Worth the Quarterly Price?</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
 </a>
 </div>
 </div>
-
-<hr class="section-divider"/>
 
 <!-- VidCloner -->
-<div class="section">
-<div class="section-header">
-<span class="section-emoji">🎙️</span>
-<span class="section-title">VidCloner</span>
-<span class="count-chip">10</span>
-</div>
-<div class="section-desc">AI-driven video avatar and voice cloning pipelines for content creation and link remaking</div>
+<div class="section" id="vidcloner">
+<div class="section-desc">AI-driven video avatar and voice cloning pipelines for content creation and link remaking, sorted newest first</div>
 <div class="post-list">
+<a href="blog-posts/vidcloner/review-delulucam.html" class="post-item">
+<div class="post-left"><span class="badge review">Review</span><span class="post-title">Delulu Cam Review 2026: Real-Time AI Camera Avatars, Explained</span></div>
+<div class="post-right"><span class="post-date">Jul 11</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/heygen-reviews.html" class="post-item">
+<div class="post-left"><span class="badge review">Review</span><span class="post-title">HeyGen Reviews (2026): What Real Users Say on G2, Trustpilot & Reddit</span></div>
+<div class="post-right"><span class="post-date">Jul 8</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/heygen-pricing.html" class="post-item">
+<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">HeyGen Pricing (2026): What It Actually Costs</span></div>
+<div class="post-right"><span class="post-date">Jul 8</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/how-to-make-ai-ugc-ads.html" class="post-item">
+<div class="post-left"><span class="badge resource">Resource</span><span class="post-title">How to Make AI UGC Ads Without Filming a Single Video (2026)</span></div>
+<div class="post-right"><span class="post-date">Jul 8</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/alternatives-arcads.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Arcads Alternatives (2026): Top 5 AI Video Cloning Tools Compared</span></div>
+<div class="post-right"><span class="post-date">Jul 7</span><span class="post-arrow">→</span></div>
+</a>
 <a href="blog-posts/vidcloner/how-to-clone-viral-tiktok-videos.html" class="post-item">
 <div class="post-left"><span class="badge resource">Resource</span><span class="post-title">How to Clone Viral TikTok Videos (2026): Step-by-Step Guide</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/vidcloner/review.html" class="post-item">
-<div class="post-left"><span class="badge review">Review</span><span class="post-title">VidCloner Review 2026: The Only VidCloner Review You'll Ever Need!</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/vidcloner/comparison-arcads.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">VidCloner vs Arcads: Custom Avatars vs AI Script-to-Actor Video Generators</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/vidcloner/comparison-heygen.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">VidCloner vs HeyGen: Which Is Better for AI Video Avatar Cloning?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/vidcloner/comparison-bluma.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">VidCloner vs Bluma: Which Is Better for Recreating Viral Ads?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/vidcloner/comparison-doublespeed.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">VidCloner vs Doublespeed: Which Is Best for AI Video Cloning?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/vidcloner/alternatives-synthesia.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Synthesia Alternatives (2026): Top 5 AI Video Avatar Tools Compared</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/vidcloner/alternatives-heygen.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best HeyGen Alternatives (2026): Top 5 AI Video Avatar Tools Compared</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
 </a>
 <a href="blog-posts/vidcloner/comparison-creatify.html" class="post-item">
 <div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">VidCloner vs Creatify: Which Is Better for TikTok Video Creation?</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
 </a>
 <a href="blog-posts/vidcloner/alternatives-captions.html" class="post-item">
 <div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Captions Alternatives (2026): Top 5 AI Video Creators for TikTok</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/alternatives-heygen.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best HeyGen Alternatives (2026): Top 5 AI Video Avatar Tools Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/review.html" class="post-item">
+<div class="post-left"><span class="badge review">Review</span><span class="post-title">VidCloner Review 2026: The Only VidCloner Review You'll Ever Need!</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/comparison-arcads.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">VidCloner vs Arcads: Custom Avatars vs AI Script-to-Actor Video Generators</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/comparison-heygen.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">VidCloner vs HeyGen: Which Is Better for AI Video Avatar Cloning?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/comparison-bluma.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">VidCloner vs Bluma: Which Is Better for Recreating Viral Ads?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/comparison-doublespeed.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">VidCloner vs Doublespeed: Which Is Best for AI Video Cloning?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/vidcloner/alternatives-synthesia.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best Synthesia Alternatives (2026): Top 5 AI Video Avatar Tools Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
 </a>
 </div>
 </div>
-
-<hr class="section-divider"/>
 
 <!-- Tikomate -->
-<div class="section">
-<div class="section-header">
-<span class="section-emoji">🔥</span>
-<span class="section-title">Tikomate</span>
-<span class="count-chip">12</span>
-</div>
-<div class="section-desc">TikTok localized growth, region-change strategies, and safe proxy reach-warming setup pages</div>
+<div class="section" id="tikomate">
+<div class="section-desc">TikTok localized growth, region-change strategies, and safe proxy reach-warming setup pages, sorted newest first</div>
 <div class="post-list">
-<a href="blog-posts/tikomate/review.html" class="post-item">
-<div class="post-left"><span class="badge review">Review</span><span class="post-title">Tikomate Review 2026: The Only Tikomate Review You'll Ever Need!</span></div>
-<span class="post-arrow">→</span>
+<a href="blog-posts/tikomate/tiktok-creator-fund-rpm-by-country.html" class="post-item">
+<div class="post-left"><span class="badge resource">Guide</span><span class="post-title">TikTok Creator Fund RPM by Country (2026): What Creators Actually Earn</span></div>
+<div class="post-right"><span class="post-date">Jul 8</span><span class="post-arrow">→</span></div>
 </a>
-<a href="blog-posts/tikomate/comparison-genviral.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs Genviral: Which Is Best for Scaling Regional Audiences?</span></div>
-<span class="post-arrow">→</span>
+<a href="blog-posts/tikomate/best-tiktok-shop-niches.html" class="post-item">
+<div class="post-left"><span class="badge resource">Guide</span><span class="post-title">Best TikTok Shop Affiliate Niches for Beginners (2026)</span></div>
+<div class="post-right"><span class="post-date">Jul 8</span><span class="post-arrow">→</span></div>
 </a>
-<a href="blog-posts/tikomate/comparison-buffer.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs Buffer: Which Is Better for Safe TikTok Posting?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/tikomate/comparison-hardlaunch.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs HardLaunch: Which Is Better for Scaling TikTok Fleets?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/tikomate/comparison-tokupgrade.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs TokUpgrade: Which Is Better for Safe TikTok Growth?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/tikomate/alternatives-toksocial.html" class="post-item">
-<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best TokSocial Alternatives (2026): Top 5 TikTok Growth Tools Compared</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/tikomate/comparison-fastlane.html" class="post-item">
-<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs Fastlane (2026): Which Is Better for US TikTok Accounts?</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/tikomate/how-to-join-tiktok-creator-rewards-outside-us.html" class="post-item">
-<div class="post-left"><span class="badge resource">Guide</span><span class="post-title">How to Join the TikTok Creator Rewards Program Outside the US (2026)</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/tikomate/tiktok-shop-affiliate-outside-us.html" class="post-item">
-<div class="post-left"><span class="badge resource">Guide</span><span class="post-title">How to Become a TikTok Shop Affiliate Outside the US (2026)</span></div>
-<span class="post-arrow">→</span>
-</a>
-<a href="blog-posts/tikomate/us-tiktok-account-international-creators.html" class="post-item">
-<div class="post-left"><span class="badge resource">Guide</span><span class="post-title">How to Get a US TikTok Account as an International Creator (2026)</span></div>
-<span class="post-arrow">→</span>
+<a href="blog-posts/tikomate/how-to-grow-tiktok-from-zero.html" class="post-item">
+<div class="post-left"><span class="badge resource">Guide</span><span class="post-title">How to Grow a TikTok Account From Zero Followers (2026 Playbook)</span></div>
+<div class="post-right"><span class="post-date">Jul 8</span><span class="post-arrow">→</span></div>
 </a>
 <a href="blog-posts/tikomate/how-to-make-money-on-tiktok-outside-us.html" class="post-item">
 <div class="post-left"><span class="badge resource">Guide</span><span class="post-title">How to Make Money on TikTok Outside the US (2026 Guide)</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
 </a>
 <a href="blog-posts/tikomate/comparison-planoly.html" class="post-item">
 <div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs Planoly: Which Is Better for TikTok Growth in 2026?</span></div>
-<span class="post-arrow">→</span>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/tikomate/how-to-join-tiktok-creator-rewards-outside-us.html" class="post-item">
+<div class="post-left"><span class="badge resource">Guide</span><span class="post-title">How to Join the TikTok Creator Rewards Program Outside the US (2026)</span></div>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/tikomate/tiktok-shop-affiliate-outside-us.html" class="post-item">
+<div class="post-left"><span class="badge resource">Guide</span><span class="post-title">How to Become a TikTok Shop Affiliate Outside the US (2026)</span></div>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/tikomate/us-tiktok-account-international-creators.html" class="post-item">
+<div class="post-left"><span class="badge resource">Guide</span><span class="post-title">How to Get a US TikTok Account as an International Creator (2026)</span></div>
+<div class="post-right"><span class="post-date">Jun 22</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/tikomate/review.html" class="post-item">
+<div class="post-left"><span class="badge review">Review</span><span class="post-title">Tikomate Review 2026: The Only Tikomate Review You'll Ever Need!</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/tikomate/comparison-genviral.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs Genviral: Which Is Best for Scaling Regional Audiences?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/tikomate/comparison-buffer.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs Buffer: Which Is Better for Safe TikTok Posting?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/tikomate/comparison-hardlaunch.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs HardLaunch: Which Is Better for Scaling TikTok Fleets?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/tikomate/comparison-tokupgrade.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs TokUpgrade: Which Is Better for Safe TikTok Growth?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/tikomate/alternatives-toksocial.html" class="post-item">
+<div class="post-left"><span class="badge alternatives">Alternatives</span><span class="post-title">Best TokSocial Alternatives (2026): Top 5 TikTok Growth Tools Compared</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
+</a>
+<a href="blog-posts/tikomate/comparison-fastlane.html" class="post-item">
+<div class="post-left"><span class="badge comparison">Comparison</span><span class="post-title">Tikomate vs Fastlane (2026): Which Is Better for US TikTok Accounts?</span></div>
+<div class="post-right"><span class="post-date">Jun 19</span><span class="post-arrow">→</span></div>
 </a>
 </div>
 </div>
 
 </div>
+<script>
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.querySelectorAll('.section').forEach(function(s){ s.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+
+// "Done" checklist, shared across whoever opens this page, backed by npoint.io
+(function(){
+  var NPOINT = 'https://api.npoint.io/0228fc35d41d278a8e96';
+  var state = {};
+
+  function slugFor(href){
+    return href.replace('blog-posts/', '').replace('.html', '').replace(/\//g, '--');
+  }
+
+  function save(){
+    fetch(NPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(state)
+    });
+  }
+
+  var items = Array.prototype.map.call(document.querySelectorAll('a.post-item'), function(a){
+    var slug = slugFor(a.getAttribute('href'));
+    var box = document.createElement('input');
+    box.type = 'checkbox';
+    box.className = 'done-checkbox';
+    box.title = 'Mark as implemented';
+    box.addEventListener('click', function(e){
+      e.stopPropagation();
+      var checked = box.checked;
+      a.classList.toggle('done', checked);
+      state[slug] = checked;
+      save();
+    });
+    a.querySelector('.post-right').insertBefore(box, a.querySelector('.post-right').firstChild);
+    return { slug: slug, box: box, a: a };
+  });
+
+  fetch(NPOINT).then(function(r){ return r.json(); }).then(function(data){
+    state = data || {};
+    items.forEach(function(item){
+      if (state[item.slug]) {
+        item.box.checked = true;
+        item.a.classList.add('done');
+      }
+    });
+  }).catch(function(){ /* npoint unreachable, checkboxes still work locally, just won't sync */ });
+})();
+</script>
 </body>
 </html>

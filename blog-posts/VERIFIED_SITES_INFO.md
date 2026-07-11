@@ -46,12 +46,16 @@ This file serves as the **strict source of truth** for all copy, pricing, featur
 
 ## 2. VidCloner (AI Video Presenter & Voice/Avatar Cloning)
 **Website:** `https://vidcloner.com`  
-**Description:** AI-powered platform that lets creators clone and remake viral videos, memes, and UGC-style reactions by replacing the actor with their own custom avatar, matching the exact movements and gestures.
+**Description:** AI-powered platform that lets creators clone and remake viral videos, memes, and UGC-style reactions by replacing the actor with their own custom avatar, matching the exact movements and gestures. Used by 8,000+ creators.
 
-### How It Works
-1. Copy the URL of any viral TikTok or Instagram video.
+### Two Modes
+* **Clone** — Replace the actor in any video with your avatar (same motions/timing).
+* **Remake** — Recreate niche-specific videos without using an avatar.
+
+### How It Works (Clone Mode)
+1. Copy the URL of any viral TikTok video.
 2. Paste the link into VidCloner and select your custom avatar.
-3. Automatically generate a perfectly cloned video with the same motions and timing.
+3. Get a perfectly cloned video with the same motions and timing.
 
 ### Use Cases
 * UGC Reactions (Crying, happy, sad reactions using your avatar)
@@ -82,7 +86,7 @@ This file serves as the **strict source of truth** for all copy, pricing, featur
 
 ## 3. Tikomate (US TikTok Account Sourcing & Growth)
 **Website:** `https://tikomate.com`  
-**Description:** Sourcing and automation system enabling creators outside the United States to target the lucrative US TikTok audience, join the Creativity Rewards Program, and act as a TikTok Shop affiliate. Bypasses burner phones, foreign SIM cards, and manual posting.
+**Description:** Sourcing and automation system enabling creators outside the United States to target the lucrative US TikTok audience, join the Creativity Rewards Program, and act as a TikTok Shop affiliate. Bypasses burner phones, foreign SIM cards, and manual posting. 10,000+ posts delivered to the US audience.
 
 ### Key Features
 * Organic targeting of the 150M+ American TikTok audience.

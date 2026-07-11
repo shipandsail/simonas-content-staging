@@ -4,17 +4,20 @@
 SEO blog post system for three products. All posts are static HTML files hosted on GitHub Pages.
 
 ## Critical: Deploy Setup
-- Git repo root is **`/Users/shailebhyanand/Documents/business/`** — NOT inside `blog-posts/`
-- The `index.html` hub lives at `/Users/shailebhyanand/Documents/business/index.html`
+- Git repo root is **`/Users/shailebhyanand/Documents/simon/simon-blog-posts/`** — NOT inside `blog-posts/`
+- The `index.html` hub lives at `/Users/shailebhyanand/Documents/simon/simon-blog-posts/index.html`
 - Links in index.html use `blog-posts/` prefix (e.g. `blog-posts/ugcdrop/review.html`)
 - GitHub repo: https://github.com/shipandsail/simonas-content-staging
-- Live URL: https://shipandsail.github.io/simonas-content-staging/
-- Deploy command (run from business/):
+- Live URL: https://shipandsail.github.io/simonas-content-staging/ (served via GitHub Pages, deployed on every push to the default branch)
+- Deploy command (run from repo root):
   ```
-  cd /Users/shailebhyanand/Documents/business
+  cd /Users/shailebhyanand/Documents/simon/simon-blog-posts
   git add -A && git commit -m "message" && git push
   ```
-- After adding any new post, add it to `/Users/shailebhyanand/Documents/business/index.html`
+- After adding any new post, add it to `/Users/shailebhyanand/Documents/simon/simon-blog-posts/index.html`
+- `index.html` structure: one `.section` div per product (UGCDrop/VidCloner/Tikomate), switched via `.tab-btn` buttons (JS toggles `.active` class, no page reload). Posts within each section are ordered **newest first** by git add-date — when adding a new post, insert it at the **top** of its section's `.post-list` and give it a `.post-date` span with the current month/day
+- Each `.tab-btn` has a `<span class="count-chip">` with the post count for that section — update it when adding/removing posts
+- "Done" checkboxes are injected client-side by the script at the bottom of `index.html` (not present in the static markup) — checked state is synced to a shared npoint.io JSON bin (`https://api.npoint.io/0228fc35d41d278a8e96`) via plain `fetch()` GET/POST, keyed by a slug derived from each post's `href`. No auth, no account — this is intentionally the simplest option after kvdb.io's email-verification requirement proved to be friction. Do not remove this script when editing `index.html`
 
 ## Three Products
 
@@ -28,7 +31,7 @@ SEO blog post system for three products. All posts are static HTML files hosted 
 
 ## File Structure
 ```
-/Users/shailebhyanand/Documents/business/
+/Users/shailebhyanand/Documents/simon/simon-blog-posts/
 ├── index.html                          ← GitHub Pages hub (NOT in blog-posts/)
 └── blog-posts/
     ├── AUTOMATION_GUIDE.md             ← Master content rules
@@ -102,8 +105,8 @@ SEO blog post system for three products. All posts are static HTML files hosted 
 2. Read `VERIFIED_SITES_INFO.md` for our product pricing
 3. Read an existing post of the same type for CSS reference
 4. Write the post
-5. Add entry to `/Users/shailebhyanand/Documents/business/index.html`
-6. Deploy from `/Users/shailebhyanand/Documents/business/`
+5. Add entry to `/Users/shailebhyanand/Documents/simon/simon-blog-posts/index.html`
+6. Deploy from `/Users/shailebhyanand/Documents/simon/simon-blog-posts/` (push to default branch → GitHub Pages auto-deploys)
 
 ## Common Competitors Already Covered (UGCDrop)
 - Arcads, GridBank, MakeUGC, ReelFarm, DansUGC, Shhots AI, Creatify (via arcads-vs-creatify), Fastlane, Trend.io, Insense, Minisocial
