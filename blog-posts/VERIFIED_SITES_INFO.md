@@ -6,13 +6,14 @@ This file serves as the **strict source of truth** for all copy, pricing, featur
 
 ## 1. UGCDrop (UGC Sourcing Library)
 **Website:** `https://ugcdrop.com`  
-**Description:** A search and discovery platform to download raw, authentic UGC-style human creator video clips (surprised, crying, happy, & other reactions) instantly. No creator outreach, no product shipping, and no waiting.
+**Description:** A search and discovery platform to download authentic UGC-style video clips instantly. The 10,000+ clip library is a mix of **real, pre-shot creator footage and pre-made AI-generated UGC-style clips**, sold and marketed together under one banner as "authentic UGC" (surprised, crying, happy, & other reactions). No creator outreach, no product shipping, and no waiting.
 
 ### Key Features
-* **10,000+ raw UGC clips** library (tagged by emotion, setting, clothing, age, gender, and style).
+* **10,000+ UGC clips** library, blending real creator footage and AI-generated UGC-style clips (tagged by emotion, setting, clothing, age, gender, and style). Both types are searchable/downloadable the same way and marketed together as "authentic UGC."
 * **Smart Filtering:** Filter by age, gender, clothes, facial expressions, mood, etc.
 * **Viral Scroll-Stopping Hook Library:** Curated list of proven text hooks to copy/adapt.
-* **Studio Credits:** Used for built-in browser editor workflows.
+* **Custom Videos:** $1/video add-on (included as an option on Pro; priced per-video on Unlimited/Enterprise) to get a video made for your specific product, rather than pulling a pre-made clip from the library.
+* **Studio Credits:** Used for built-in browser editor workflows (Hooks → Library → Demos → Music → render, see Studio section below).
 * **UGC Contributor Program:** Creators can upload raw UGC clips to the platform to earn downloads/credits.
 
 ### Subscription Pricing Tiers
@@ -41,6 +42,16 @@ This file serves as the **strict source of truth** for all copy, pricing, featur
 ### Individual Credit Pricing (No Subscription)
 * **Starting Price:** From `$1.69 per credit` (e.g., 10 credits = $16.90).
 * **Volume Discount:** Cheaper in bulk, scaling down as low as `$0.40 per credit`.
+
+### The Studio (Custom Video Assembly)
+Separate from the clip library, the Studio is where Studio Credits are spent to render custom videos, assembling a hook + a base clip (real or AI-generated, from the library) + your own product demo + music. It is a template/assembly workflow, not a script-to-avatar tool where you type a script and an avatar performs it (no avatar-selection UI confirmed).
+* **Workflow tabs:** 1. Hooks → 2. Library → 3. Demos → 4. Music, then render.
+* **Hooks tab:** Paste text hooks (one per line = one video). Supports Text hook, Snapchat-style, IMG hook formats; Green screen hook format is "coming soon." An AI hook generator (powered by Claude) can generate viral text hooks for a given product if the user has none.
+* **Library tab:** Select from the 100,000+ B-Roll / UGC clip library as the base footage.
+* **Demos tab:** Attach the user's own uploaded product demo footage.
+* **Music tab:** Add background music.
+* **Rendered videos are retained for 30 days**, then automatically deleted — must be downloaded within that window.
+* Dashboard shows separate credit balances for Download credits and Studio credits (e.g. a free/demo account observed with 25 download credits, 0 Studio credits).
 
 ---
 
