@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Buffer vs Planoly (2026): Which Social Scheduler Is Better?</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Tikomate",
+  "description": "US TikTok account sourcing and automation system for creators outside the United States.",
+  "url": "https://tikomate.com",
+  "offers": {"@type": "AggregateOffer","lowPrice": "25","highPrice": "79","priceCurrency": "USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question","name": "What is the main difference between Buffer and Planoly?","acceptedAnswer": {"@type": "Answer","text": "Buffer is a general-purpose social scheduler priced per channel, from $6/month with a free plan covering 3 channels. Planoly focuses on visual content calendars for Instagram, TikTok, Facebook, and Pinterest, priced per Social Set from $14/month, with DM automation and feed visualization tools Buffer does not offer."}},
+    {"@type": "Question","name": "Which is cheaper, Buffer or Planoly?","acceptedAnswer": {"@type": "Answer","text": "Buffer is cheaper at entry: its Essentials plan is $6/month per channel, versus Planoly's $14/month Starter plan for one Social Set. Buffer also has a free plan for up to 3 channels, which Planoly's tiers do not match."}},
+    {"@type": "Question","name": "Does either Buffer or Planoly help with US TikTok monetization?","acceptedAnswer": {"@type": "Answer","text": "No. Both are scheduling and content-planning tools that assume your TikTok account is already correctly set up. Neither can register or change an account's country eligibility for the Creator Rewards Program or TikTok Shop Affiliate. Tikomate solves that specific problem, providing a US-registered TikTok account for a one-time $25 fee."}},
+    {"@type": "Question","name": "Can I use Tikomate alongside Buffer or Planoly?","acceptedAnswer": {"@type": "Answer","text": "Yes, and this is the recommended workflow. Get a US-registered TikTok account and warm it up with Tikomate first, then connect it to Buffer or Planoly for ongoing content scheduling once the account is verified and active."}}
+  ]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f9f9f7;color:#1a1a1a;font-family:'Inter',sans-serif;line-height:1.7;font-size:16px}
+.hero{position:relative;width:100%;height:460px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.05),rgba(0,0,0,.7))}
+.hero-text{position:absolute;bottom:44px;left:50%;transform:translateX(-50%);width:100%;max-width:780px;padding:0 24px}
+.hero-text h1{font-size:2rem;font-weight:800;line-height:1.2;color:#fff;letter-spacing:-.02em}
+.hero-meta{margin-top:10px;font-size:.8rem;color:rgba(255,255,255,.8);font-weight:500;display:flex;gap:12px;align-items:center}
+.layout{max-width:780px;margin:0 auto;padding:52px 24px 100px}
+.tldr{background:#fff;border:1.5px solid #e5e5e0;border-radius:12px;padding:22px 26px;margin-bottom:44px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.tldr-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6b6b6b;margin-bottom:12px}
+.tldr ul{list-style:none}
+.tldr ul li{font-size:.95rem;color:#2a2a2a;padding:5px 0 5px 20px;position:relative;font-weight:500}
+.tldr ul li::before{content:'→';position:absolute;left:0;color:#111;font-weight:700}
+.intro{font-size:1.08rem;color:#444;margin-bottom:44px;padding-bottom:36px;border-bottom:1.5px solid #e5e5e0;line-height:1.8}
+h2{font-size:1.45rem;font-weight:800;color:#111;margin:52px 0 14px;line-height:1.25;letter-spacing:-.02em}
+h3{font-size:1.1rem;font-weight:700;color:#222;margin:28px 0 10px;line-height:1.35}
+p{font-size:1rem;color:#333;margin-bottom:20px;line-height:1.78}
+ul.blog-list{padding-left:0;margin-bottom:28px;list-style:none}
+ul.blog-list li{color:#333;font-size:.97rem;padding:7px 0 7px 22px;position:relative;line-height:1.65;border-bottom:1px solid #f3f3f0}
+ul.blog-list li:last-child{border-bottom:none}
+ul.blog-list li::before{content:'·';position:absolute;left:6px;color:#111;font-size:1.3rem;line-height:1.35}
+.stat-block{background:#fff;border:1.5px solid #e5e5e0;border-radius:12px;padding:24px 28px;margin:32px 0;display:flex;align-items:center;gap:24px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.stat-number{font-size:2.8rem;font-weight:800;color:#111;white-space:nowrap;letter-spacing:-.03em;line-height:1}
+.stat-right{flex:1}
+.stat-context{font-size:.97rem;color:#333;font-weight:500;line-height:1.55}
+.stat-source{font-size:.72rem;color:#999;margin-top:5px}
+.comparison-block{margin:32px 0}
+.comparison-intro{font-size:.92rem;color:#555;margin-bottom:16px;font-weight:500}
+.comparison-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.comparison-col{background:#fff;border:1.5px solid #e5e5e0;border-radius:10px;padding:18px 20px;box-shadow:0 1px 3px rgba(0,0,0,.03)}
+.comparison-label{font-weight:800;color:#111;margin-bottom:10px;font-size:.93rem;padding-bottom:8px;border-bottom:1.5px solid #f0f0ec}
+.comparison-col ul{list-style:none;padding:0}
+.comparison-col ul li{font-size:.86rem;color:#444;padding:5px 0 5px 14px;position:relative;line-height:1.5}
+.comparison-col ul li::before{content:'·';position:absolute;left:2px;color:#111;font-size:1.1rem;line-height:1.35}
+.blog-image{margin:40px 0}
+.blog-image img{width:100%;max-height:480px;object-fit:contain;background:#f8f8f8;border-radius:12px;display:block;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.blog-image figcaption{font-size:.76rem;color:#999;margin-top:8px;text-align:center}
+.table-wrap{overflow-x:auto;margin:32px 0;border-radius:12px;border:1.5px solid #e5e5e0;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th{background:#f5f5f2;color:#111;font-weight:700;padding:12px 16px;text-align:left;border-bottom:1.5px solid #e5e5e0;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase}
+td{padding:11px 16px;border-bottom:1px solid #f0f0ec;color:#333;line-height:1.5}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafaf8}
+.blog-quote{border-left:3px solid #111;padding:16px 24px;margin:32px 0;background:#fff;border-radius:0 10px 10px 0;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.quote-text{font-size:1.05rem;color:#222;font-style:italic;margin-bottom:10px;line-height:1.7;font-weight:500}
+.quote-author{font-size:.78rem;color:#777;font-weight:600}
+.callout{border-radius:10px;padding:16px 20px;margin:28px 0;font-size:.94rem;line-height:1.65;display:flex;gap:12px;align-items:flex-start}
+.callout.insight{background:#f5f0ff;border:1.5px solid #c4b5fd}
+.callout-icon{font-size:1rem;margin-top:2px;flex-shrink:0}
+.callout-inner{flex:1}
+.callout-label{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.callout.insight .callout-label{color:#7c3aed}
+.callout-text{font-size:.92rem}
+.callout.insight .callout-text{color:#4c1d95}
+.faq{margin:52px 0 44px}
+.faq-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6b6b6b;margin-bottom:20px}
+.faq-item{border-bottom:1.5px solid #f0f0ec;padding:20px 0}
+.faq-q{font-size:.97rem;font-weight:700;color:#111;margin-bottom:8px}
+.faq-a{font-size:.91rem;color:#555;line-height:1.7}
+.cta-block{background:#111;border-radius:16px;padding:48px 44px;text-align:center;margin-top:60px}
+.cta-block h3{font-size:1.55rem;font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-.02em}
+.cta-block p{color:rgba(255,255,255,.6);font-size:.95rem;margin-bottom:28px;line-height:1.65}
+.cta-btn{display:inline-block;background:#fff;color:#111;font-weight:800;font-size:.93rem;padding:14px 34px;border-radius:8px;text-decoration:none;letter-spacing:-.01em}
+.cmp-pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin:32px 0}
+.cmp-pricing__col{background:#fff;border:1.5px solid #e5e5e0;border-radius:12px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.cmp-pricing__col h3{font-size:1.25rem;font-weight:800;color:#111;margin-bottom:18px;border-bottom:1.5px solid #f0f0ec;padding-bottom:10px}
+.cmp-pricing__col ul{list-style:none}
+.cmp-pricing__col li{margin-bottom:16px}
+.cmp-price__top{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;margin-bottom:4px}
+.cmp-price__amount{font-size:1.15rem;color:#111}
+.cmp-pricing__col p{font-size:.85rem;color:#6b6b6b;margin-bottom:0}
+.cmp-choose{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin:32px 0}
+.cmp-choose__card{background:#fff;border:1.5px solid #e5e5e0;border-radius:12px;padding:28px;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.cmp-choose__card h2{font-size:1.25rem;font-weight:800;color:#111;margin-bottom:18px;border-bottom:1.5px solid #f0f0ec;padding-bottom:10px}
+.cmp-choose__card ul{list-style:none;margin-bottom:24px}
+.cmp-choose__card li{font-size:.9rem;color:#333;padding-left:20px;position:relative;margin-bottom:10px}
+.cmp-choose__card li::before{content: '✓';position:absolute;left:0;color:#10b981;font-weight:700}
+.cmp-choose__card.competitor li::before{content:'•';color:#9ca3af}
+.cmp-choose__card .cta-btn{width:100%;text-align:center}
+@media(max-width:600px){.hero-text h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<nav style="position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid #e5e5e5;padding:10px 24px"><a href="../../" style="font-family:Inter,sans-serif;font-size:.85rem;font-weight:600;color:#111;text-decoration:none;letter-spacing:-.01em">Simonas Content Staging</a></nav>
+<div class="hero">
+<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1536&h=1024&auto=format&fit=crop" alt="Buffer vs Planoly"/>
+<div class="hero-overlay"></div>
+<div class="hero-text">
+<h1>Buffer vs Planoly (2026): Which Social Scheduler Is Better?</h1>
+<div class="hero-meta">
+<span>Updated July 2026</span>
+<span>·</span>
+<span>7 min read</span>
+</div>
+</div>
+</div>
+<div class="layout">
+<div class="tldr">
+<div class="tldr-label">TL;DR</div>
+<ul>
+<li>Buffer is a general-purpose scheduler priced per channel, from $6/month, with a free plan for 3 channels.</li>
+<li>Planoly focuses on visual content calendars for Instagram, TikTok, Facebook, and Pinterest, priced per Social Set from $14/month, with DM automation Buffer lacks.</li>
+<li>Neither tool can fix TikTok account eligibility, if you're outside the US and need Creator Rewards or Shop access, Tikomate provides a US-registered account for $25 one-time.</li>
+</ul>
+</div>
+<p class="intro">Buffer and Planoly are both social media scheduling tools, but they take different approaches to multi-platform management. Buffer is channel-based and general-purpose. Planoly is Social-Set-based with a stronger visual planning layer. This guide compares them for creators and teams deciding which scheduler fits their workflow.</p>
+<h2>What is the main difference between Buffer and Planoly?</h2>
+<p>Buffer connects to your channels via official APIs and charges per channel, starting free for up to 3 channels and scaling to $6-12/month per channel for unlimited scheduling. Planoly charges per "Social Set" (a bundle of connected accounts), starting at $14/month, and adds visual feed planning, a media library, and Instagram DM automation that Buffer does not offer.</p>
+<ul class="blog-list">
+<li>Buffer: Per-channel pricing, free tier for 3 channels, official API scheduling, unified inbox.</li>
+<li>Planoly: Per-Social-Set pricing, visual feed preview, media library, DM automation, from $14/month.</li>
+</ul>
+<div class="stat-block">
+<div class="stat-number">$0</div>
+<div class="stat-right">
+<div class="stat-context">Buffer's free plan covers 3 channels and 10 scheduled posts each, no equivalent free tier exists on Planoly, whose cheapest plan starts at $14/month.</div>
+<div class="stat-source">Source: Buffer and Planoly published pricing, 2026</div>
+</div>
+</div>
+
+<figure class="blog-image">
+<img src="../images/buffer-ui.png" alt="Buffer social media scheduling dashboard"/>
+<figcaption>Buffer's Create Post interface, a general-purpose social scheduler.</figcaption>
+</figure>
+<h2>Go Deeper: Side-by-Side Breakdown</h2>
+<h3>1. Pricing Model: Per-Channel vs Per-Social-Set</h3>
+<p>Buffer's Essentials plan is $6/month per channel, so a brand running 3 channels pays $18/month total. Planoly bundles multiple channels into one "Social Set" at $14/month for its Starter tier, which can be cheaper or more expensive depending on how many channels you're actually running.</p>
+<h3>2. Planning Tools: Unified Calendar vs Visual Feed Preview</h3>
+<p>Buffer's calendar is functional and platform-agnostic. Planoly adds a visual grid preview specifically for Instagram feed planning, plus a shared media library, features that matter more to brands planning aesthetic-driven feeds than to teams simply queueing posts.</p>
+<h3>3. Extra Features: Landing Pages vs DM Automation</h3>
+<p>Buffer's Essentials plan includes a basic landing page builder. Planoly instead offers Instagram DM automation and reminder-based posting for content types TikTok's API doesn't allow auto-posting for. Neither tool, however, can change what country your TikTok account is registered to, a separate problem entirely.</p>
+<h2>Where Does Tikomate Fit In?</h2>
+<p>Buffer and Planoly both assume you already have a working, correctly-registered TikTok account and just need help scheduling posts to it. Tikomate solves a layer beneath that: it provides a US-registered TikTok account so international creators can access the Creator Rewards Program and TikTok Shop Affiliate, monetization paths a scheduling tool cannot unlock no matter how good its calendar is.</p>
+<div class="comparison-block">
+<div class="comparison-intro">Why creators add Tikomate to the mix:</div>
+<div class="comparison-grid">
+<div class="comparison-col">
+<div class="comparison-label">Tikomate Strengths</div>
+<ul>
+<li>US-registered TikTok account, unlocks Creator Rewards + Shop Affiliate</li>
+<li>One-time $25 fee, no monthly subscription</li>
+<li>No SIM card, burner phone, or VPN required</li>
+<li>Automated warming to avoid the 200-view shadowban trap</li>
+</ul>
+</div>
+<div class="comparison-col">
+<div class="comparison-label">Best Paired With</div>
+<ul>
+<li>Get a US account and warm it up with Tikomate first</li>
+<li>Then use Buffer or Planoly to schedule ongoing content to it</li>
+<li>Tikomate solves access, Buffer/Planoly solve organization</li>
+</ul>
+</div>
+</div>
+</div>
+<h2>Specification Comparison</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Buffer</th>
+<th>Planoly</th>
+<th>Tikomate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pricing model</td>
+<td>Per channel, from $6/mo</td>
+<td>Per Social Set, from $14/mo</td>
+<td>One-time, from $25</td>
+</tr>
+<tr>
+<td>Free plan</td>
+<td>Yes, 3 channels, 10 posts/channel</td>
+<td>No</td>
+<td>N/A, one-time purchase</td>
+</tr>
+<tr>
+<td>Visual feed preview</td>
+<td>Not offered</td>
+<td>Yes</td>
+<td>Not offered</td>
+</tr>
+<tr>
+<td>DM automation</td>
+<td>Not offered</td>
+<td>Yes (Instagram)</td>
+<td>Not offered</td>
+</tr>
+<tr>
+<td>Landing page builder</td>
+<td>Yes (Essentials plan)</td>
+<td>Yes (link in bio)</td>
+<td>Not offered</td>
+</tr>
+<tr>
+<td>US TikTok account setup</td>
+<td>Not offered</td>
+<td>Not offered</td>
+<td>Yes, pre-verified, no SIM/VPN</td>
+</tr>
+<tr>
+<td>Creator Rewards / Shop unlock</td>
+<td>Not offered</td>
+<td>Not offered</td>
+<td>Yes, for international creators</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>Pricing Compared</h2>
+<div class="cmp-pricing">
+<div class="cmp-pricing__col">
+<h3>Buffer</h3>
+<ul>
+<li><div class="cmp-price__top"><strong>Free Plan</strong><span class="cmp-price__amount">$0</span></div><p>3 channels, 10 posts/channel, basic editing.</p></li>
+<li><div class="cmp-price__top"><strong>Essentials</strong><span class="cmp-price__amount">$6/mo per channel</span></div><p>Unlimited scheduling, basic analytics, landing page builder.</p></li>
+</ul>
+</div>
+<div class="cmp-pricing__col">
+<h3>Planoly</h3>
+<ul>
+<li><div class="cmp-price__top"><strong>Starter</strong><span class="cmp-price__amount">$14/mo</span></div><p>1 Social Set, 60 uploads/month, 1 user, DM automation.</p></li>
+<li><div class="cmp-price__top"><strong>Growth</strong><span class="cmp-price__amount">$24/mo</span></div><p>2 Social Sets, unlimited uploads, 2 users.</p></li>
+</ul>
+</div>
+<div class="cmp-pricing__col">
+<h3>Tikomate</h3>
+<ul>
+<li><div class="cmp-price__top"><strong>US TikTok Account</strong><span class="cmp-price__amount">$25</span></div><p>One-time. Fully set up US account, Creator Rewards and TikTok Shop eligibility.</p></li>
+<li><div class="cmp-price__top"><strong>Domination Guide</strong><span class="cmp-price__amount">$79</span></div><p>One-time. Multi-account warmup, US scaling, Creator Rewards + TikTok Shop setup.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout insight">
+<div class="callout-icon">→</div>
+<div class="callout-inner">
+<div class="callout-label">Scheduling Isn't Market Access</div>
+<div class="callout-text">Both Buffer and Planoly assume your TikTok account is already correctly registered. Neither can unlock the Creator Rewards Program or TikTok Shop Affiliate for a creator outside the US. Tikomate provides a US-registered account for $25 one-time to solve that specific problem before scheduling matters.</div>
+</div>
+</div>
+<div class="blog-quote">
+<div class="quote-text">"I was using Buffer and Planoly to schedule my TikTok posts but earning nothing because my account wasn't eligible for Creator Rewards. I got a US account from Tikomate and within two months I was earning from both Creator Rewards and TikTok Shop affiliate sales."</div>
+<div class="quote-author">Ananya T. · TikTok Creator, India</div>
+</div>
+
+<figure class="blog-image">
+<img src="../images/planoly-ui.png" alt="Planoly social media scheduling calendar interface"/>
+<figcaption>Planoly, visual content calendar and scheduling platform for multi-platform content management.</figcaption>
+</figure>
+<h2>Make Your Decision</h2>
+<p>Buffer wins if you want a free-to-start, per-channel scheduler. Planoly wins if you need visual feed planning and DM automation. But if your TikTok account is registered outside the US and locked out of Creator Rewards or Shop Affiliate, neither scheduler solves that, Tikomate does, for a one-time $25 fee with no monthly commitment.</p>
+<div class="cmp-choose">
+<div class="cmp-choose__card">
+<h2>Choose Buffer if…</h2>
+<ul>
+<li>You want a free plan to start scheduling across 3 channels</li>
+<li>You want simple per-channel pricing without bundling</li>
+<li>You need a unified inbox alongside your scheduling calendar</li>
+</ul>
+<a href="https://buffer.com" class="cta-btn">Visit Buffer</a>
+</div>
+<div class="cmp-choose__card competitor">
+<h2>Choose Planoly if…</h2>
+<ul>
+<li>You want to visually preview your Instagram feed before posting</li>
+<li>You need Instagram DM automation built in</li>
+<li>You're managing several channels under one bundled Social Set</li>
+</ul>
+<a href="https://planoly.com" class="cta-btn" style="background:#111; color:#fff;">Visit Planoly</a>
+</div>
+<div class="cmp-choose__card">
+<h2>Choose Tikomate if…</h2>
+<ul>
+<li>Your TikTok account is registered outside the US and locked out of monetization</li>
+<li>You want a one-time $25 fee instead of a recurring subscription</li>
+<li>You want to unlock Creator Rewards and TikTok Shop Affiliate</li>
+</ul>
+<a href="https://tikomate.com" class="cta-btn">Get Your US TikTok Account</a>
+</div>
+</div>
+<div class="faq">
+<div class="faq-label">Frequently Asked Questions</div>
+<div class="faq-item">
+<div class="faq-q">What is the main difference between Buffer and Planoly?</div>
+<div class="faq-a">Buffer is a general-purpose social scheduler priced per channel, from $6/month with a free plan covering 3 channels. Planoly focuses on visual content calendars for Instagram, TikTok, Facebook, and Pinterest, priced per Social Set from $14/month, with DM automation and feed visualization tools Buffer does not offer.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Which is cheaper, Buffer or Planoly?</div>
+<div class="faq-a">Buffer is cheaper at entry: its Essentials plan is $6/month per channel, versus Planoly's $14/month Starter plan for one Social Set. Buffer also has a free plan for up to 3 channels, which Planoly's tiers do not match.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Does either Buffer or Planoly help with US TikTok monetization?</div>
+<div class="faq-a">No. Both are scheduling and content-planning tools that assume your TikTok account is already correctly set up. Neither can register or change an account's country eligibility for the Creator Rewards Program or TikTok Shop Affiliate. Tikomate solves that specific problem, providing a US-registered TikTok account for a one-time $25 fee.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">Can I use Tikomate alongside Buffer or Planoly?</div>
+<div class="faq-a">Yes, and this is the recommended workflow. Get a US-registered TikTok account and warm it up with Tikomate first, then connect it to Buffer or Planoly for ongoing content scheduling once the account is verified and active.</div>
+</div>
+</div>
+<div class="cta-block">
+<h3>Unlock US TikTok income from anywhere in the world.</h3>
+<p>Tikomate provides a pre-verified US TikTok account with immediate Creator Rewards and TikTok Shop access. $25 one-time.</p>
+<a href="https://tikomate.com" class="cta-btn">Get Your US TikTok Account</a>
+</div>
+</div>
+</body>
+</html>
